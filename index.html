@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>记忆档案馆</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 密码层 -->
+    <div id="gatekeeper">
+        <div class="access-box">
+            <input type="password" id="passcode" placeholder="请输入时光密码">
+            <button onclick="checkPasscode()">开启回忆</button>
+        </div>
+    </div>
+
+    <!-- 主内容 -->
+    <div id="content">
+        <div class="memory-grid" id="memoryContainer"></div>
+    </div>
+
+    <!-- 文章模态框 -->
+    <div id="articleModal" class="modal">
+        <div class="modal-backdrop" onclick="closeModal()"></div>
+        <div class="modal-content"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
