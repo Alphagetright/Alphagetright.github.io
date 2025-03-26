@@ -1,0 +1,201 @@
+/* style.css */
+:root {
+    --primary: #F8EDE3;
+    --secondary: #BDD2B6;
+    --accent: #A86464;
+}
+
+body {
+    background: linear-gradient(135deg, var(--primary) 0%, #ffffff 100%);
+    font-family: 'Microsoft YaHei', sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* 密码界面 */
+#gatekeeper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.96);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.access-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.access-box input {
+    padding: 12px 20px;
+    border: 2px solid var(--secondary);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    width: 250px;
+    font-size: 16px;
+}
+
+.access-box button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.access-box button:hover {
+    transform: translateY(-2px);
+}
+
+/* 记忆卡片 */
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.memory-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.memory-card.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.card-media {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-media img,
+.card-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.card-media:hover img {
+    transform: scale(1.05);
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-date {
+    color: #7E8A97;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-title {
+    color: #2C3E50;
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+/* 模态框 */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 2000;
+}
+
+.modal-backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    position: relative;
+    background: white;
+    max-width: 800px;
+    margin: 2rem auto;
+    border-radius: 12px;
+    max-height: 90vh;
+    overflow-y: auto;
+    z-index: 2001;
+}
+
+.article-header {
+    position: relative;
+}
+
+.article-media {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+}
+
+.article-body {
+    padding: 2rem;
+}
+
+.article-body img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    margin: 1.5rem 0;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
