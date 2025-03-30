@@ -1,5 +1,5 @@
 // app.js
-const SECRET_PASSCODE = "0"; // 修改密码
+const SECRET_PASSCODE = "ljc727706"; // 修改密码
 
 const memories = [
     {
